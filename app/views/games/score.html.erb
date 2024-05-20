@@ -1,0 +1,8 @@
+<h1>Score Result</h1>
+
+<p>Your word: <%= @user_word %></p>
+<p>Result: <%= @result[:message] %></p>
+<p>Score: <%= @result[:score] %></p>
+<p>Time taken: <%= @result[:time].round(2) %> seconds</p>
+
+<%= link_to 'Play Again', new_path %>

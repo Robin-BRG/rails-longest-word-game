@@ -1,0 +1,14 @@
+<h1>New Game</h1>
+
+<p>Random grid: <%= @random_grid.join(", ") %></p>
+
+<%= form_with url: "/score", method: :post, data: { turbo: false } do %>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :random_grid, @random_grid.join(",") %>
+  <%= hidden_field_tag :start_time, Time.now %>
+
+  <p>Make a word from the letters above:</p>
+  <%= text_field_tag :user_word %>
+
+  <%= submit_tag "Submit Word" %>
+<% end %>
